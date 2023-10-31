@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({children}) {
   return (
     <html lang="fa" dir="rtl">
-      <body className="bg-background ">
+      <body className={`${yekanBakh.className} bg-background`}>
         <Layout className={yekanBakh.className}>{children}</Layout>
       </body>
     </html>

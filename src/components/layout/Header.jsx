@@ -5,11 +5,11 @@ import Navbar from "./Navbar";
 
 function Header() {
   return (
-    <header className="">
+    <header className="flex items-center justify-between py-5 border-b border-b-white/5">
       <div>
         <Link href="/">
           <Image
-            className="w-[160px]"
+            className="w-[100px] md:w-[130px]"
             src={logo}
             width={300}
             height={300}
@@ -21,7 +21,7 @@ function Header() {
         <Navbar />
       </div>
       <div>
-          <button>ثبت نام و ورود</button>
+          <button className="bg-black py-2 px-4 text-[14px] md:py-3 md:px-5 rounded-md md:text-md text-white hover:bg-primary transition-all">ثبت نام و ورود</button>
       </div>
     </header>
   );

@@ -4,21 +4,21 @@ import React from "react";
 function Navbar() {
   return (
     <div>
-      <nav className="text-white">
+      <nav className="hidden md:flex">
         <ul className="flex [&>li]:mx-3">
-          <li>
+          <li className="text-white/25 hover:text-white xl:text-md">
             <Link href="/">صفحه اصلی</Link>
           </li>
-          <li>
+          <li className="text-white/25 hover:text-white  xl:text-md">
             <Link href="/">دروه ها</Link>
           </li>
-          <li>
+          <li className="text-white/25 hover:text-white  xl:text-md">
             <Link href="/">مقالات</Link>
           </li>
-          <li>
+          <li className="text-white/25 hover:text-white  xl:text-md">
             <Link href="/">درباره ما</Link>
           </li>
-          <li>
+          <li className="text-white/25 hover:text-white  xl:text-md">
             <Link href="/">تماس با ما</Link>
           </li>
         </ul>
