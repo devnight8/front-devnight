@@ -32,6 +32,7 @@ function SignUp() {
       toast.error("ایمیل خود را وارد کنید");
       return;
     }
+
     if (!password) {
       toast.error("رمز عبور خود را وارد کنید");
       return;
@@ -65,7 +66,7 @@ function SignUp() {
             نام کاربری
           </label>
           <input
-            className="w-full p-3 outline-none bg-transparent border border-white/20 rounded"
+            className="w-full p-3 outline-none focus-visible::bg-primary bg-transparent border border-white/20 rounded"
             type="text"
             placeholder="devnight"
             value={username}

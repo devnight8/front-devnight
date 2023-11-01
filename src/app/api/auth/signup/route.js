@@ -9,7 +9,7 @@ export async function POST(req) {
     const body = await req.json();
     const {username, email, password} = body;
     console.log(username, email, password);
-    if (!username) {
+    if (!username || !email || !password) {
       return NextResponse.json(
         {error: "لطفا اطلاعات معتبر وراد کنید"},
         {status: 422}
