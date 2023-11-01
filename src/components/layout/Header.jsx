@@ -22,7 +22,7 @@ router.push("/auth/signup");
 
 
   return (
-    <header className="flex items-center mx-2 md:mx-0 justify-between py-5 border-b border-b-white/5">
+    <header className="flex items-center mx-2 md:mx-0 justify-between py-5 border-b border-b-white/5 ">
         <div className="md:hidden">
           <HiOutlineBars3BottomRight className="text-white text-2xl"/>
         </div>
