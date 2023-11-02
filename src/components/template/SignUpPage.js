@@ -5,24 +5,24 @@ import {useRouter} from "next/navigation";
 import {useState} from "react";
 import toast, {Toaster} from "react-hot-toast";
 import {ThreeDots} from "react-loader-spinner";
-function SignUp() {
+function SignUpPage() {
   const [username, setuserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
 
   const clickHandler = async (e) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       body: JSON.stringify({username, email, password}),
       headers: {"content-Type": "application/json"},
     });
     const data = await res.json();
-    setLoading(false)
+    setLoading(false);
     console.log(data);
     if (!username) {
       toast.error("نام کاربری خود را وارد کنید");
@@ -41,7 +41,7 @@ function SignUp() {
     if (res.status === 201) {
       toast.success("ثبت نام شما با موفقیت انجام شد");
       setTimeout(() => {
-        router.push("/");
+        router.push("/login");
       }, 2000);
     } else {
       toast.error(data.error);
@@ -107,28 +107,29 @@ function SignUp() {
             id="password"
           />
         </div>
-        {loading ? (   <ThreeDots
-          height="80"
-          width="80"
-          radius="9"
-          color="#3B82F6"
-          ariaLabel="three-dots-loading"
-          wrapperStyle={{}}
-          wrapperClassName=""
-          visible={true}
-        />) :(       <button
-          type="submit"
-          onClick={clickHandler}
-          className="bg-primary w-1/2 mb-5 p-2 rounded-md text-lg">
-          ثبت نام
-        </button>
-     )}
- 
+        {loading ? (
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#3B82F6"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />
+        ) : (
+          <button
+            type="submit"
+            onClick={clickHandler}
+            className="bg-primary w-1/2 mb-5 p-2 rounded-md text-lg">
+            ثبت نام
+          </button>
+        )}
+
         <span>
           حساب کاربری دارید ؟
-          <Link
-            className="mx-2 my-3 bg-primary p-1 rounded-md"
-            href="/auth/login">
+          <Link className="mx-2 my-3 bg-primary p-1 rounded-md" href="/login">
             ورود
           </Link>
         </span>
@@ -139,4 +140,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignUpPage;

@@ -1,16 +1,43 @@
 "use client";
 
-
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import {useState} from "react";
+import {useRouter} from "next/navigation";
 
+import {signIn} from "next-auth/react";
+import toast, {Toaster} from "react-hot-toast";
+import {ThreeDots} from "react-loader-spinner";
 
-function Login() {
+function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+  const loginHandler = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    const res = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    });
+    setLoading(false);
+    if (res.error) {
+      toast.error(res.error);
+    } else {
+      toast.success("با موفقیت وارد سایت شدید");
+      setTimeout(() => {
+        router.push("/");
+      }, 1500);
+    }
+  };
+
   return (
-    <form className="flex items-center flex-col justify-center min-h-screen group-hover">
+    <form
+      method="post"
+      className="flex items-center flex-col justify-center min-h-screen group-hover">
       <section
         id="form-signup"
         className="bg-[#3F3F3F] w-[500px] flex flex-col items-center  px-4 py-5 rounded text-center text-white">
@@ -50,19 +77,36 @@ function Login() {
             id="password"
           />
         </div>
-        <button
-          type="submit"
-          // onClick={clickHandler}
-          className="bg-primary w-1/2 mb-5 p-2 rounded-md text-lg">
-         ورود به سایت
-        </button>
+        {loading ? (
+          <ThreeDots
+            height="80"
+            width="80"
+            radius="9"
+            color="#3B82F6"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />
+        ) : (
+          <button
+            type="submit"
+            onClick={loginHandler}
+            className="bg-primary w-1/2 mb-5 p-2 rounded-md text-lg">
+            ورود در سایت
+          </button>
+        )}
 
-        <span>حساب کاربری ندارید ؟<Link className="mx-2 bg-primary p-1 rounded-md" href="/auth/signup">ثبت نام </Link></span>
-
+        <span>
+          حساب کاربری ندارید ؟
+          <Link className="mx-2 bg-primary p-1 rounded-md" href="/signup">
+            ثبت نام{" "}
+          </Link>
+        </span>
+        <Toaster />
       </section>
-    
     </form>
-  )
+  );
 }
 
-export default Login
+export default LoginPage;
