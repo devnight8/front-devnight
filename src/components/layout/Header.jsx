@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import logo from "@/public/images/DEVNIGHT.svg";
-import Navbar from "./Navbar";
+import Navbar from "../module/Navbar";
 import {HiOutlineBars3BottomRight} from "react-icons/hi2";
 import {useRouter} from "next/navigation";
 import {useSession} from "next-auth/react";

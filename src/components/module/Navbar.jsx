@@ -21,7 +21,7 @@ function Navbar() {
           <li className="text-white/25 hover:text-white xl:text-md">
             <Link href="/">درباره ما</Link>
           </li>
-          <li className="text-white/25 hover:text-white  xl:text-md">
+          <li className="text-white/25 hover:text-white xl:text-md">
             <Link href="/">تماس با ما</Link>
           </li>
         </ul>
