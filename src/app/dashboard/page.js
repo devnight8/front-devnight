@@ -8,7 +8,14 @@ async function DashBoard() {
   await connectDB();
   const session = await getServerSession(authOptions);
   const user = await User.findOne({email: session.user.email});
-  return <DashboardPage createdAt={user.createdAt} email={user.email} />;
+  console.log(user);
+  return (
+    <DashboardPage
+      createdAt={user.createdAt}
+      email={user.email}
+      nickname={user.nickname}
+    />
+  );
 }
 
 export default DashBoard;

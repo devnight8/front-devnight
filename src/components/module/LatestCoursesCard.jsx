@@ -12,7 +12,7 @@ function LatestCoursesCard() {
 
   return (
     <section className="bg-gradient-to-l from-[#373737] to-[#2c384900] px-4 my-24 relative">
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 justify-evenly md:gap-2 relative -top-10  ">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 justify-evenly md:gap-2 relative -top-10">
         <div className="bg-gradient-to-t from-[#000] group to-[#2C3849] rounded-md p-4 relative flex items-center justify-center flex-col">
           <button
             className="self-end p-1 bg-white/10 rounded-full text-3xl "
@@ -20,7 +20,7 @@ function LatestCoursesCard() {
             <HiHeart
               className={
                 liked
-                  ? " relative top-[2px] text-red-500 hover:scale-105 transition-all "
+                  ? "relative top-[2px] text-red-500 hover:scale-105 transition-all"
                   : "relative  top-[1px] text-white/20 hover:scale-105 transition-all"
               }
             />

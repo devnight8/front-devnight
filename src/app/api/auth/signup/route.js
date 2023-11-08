@@ -7,9 +7,9 @@ export async function POST(req) {
   try {
     await connectDB();
     const body = await req.json();
-    const {username, email, password} = body;
+    const {username, email, password, nickname} = body;
     console.log(username, email, password);
-    if (!username || !email || !password) {
+    if (!username || !email || !password || !nickname) {
       return NextResponse.json(
         {error: "لطفا اطلاعات معتبر وراد کنید"},
         {status: 422}
@@ -25,6 +25,7 @@ export async function POST(req) {
     }
     const hashedPassword = await hashPassword(password);
     const newUser = await User.create({
+      nickname: nickname,
       username: username,
       email: email,
       password: hashedPassword,

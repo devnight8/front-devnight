@@ -16,7 +16,7 @@ function DashboardSidbarLayout({children, session}) {
       <div className="sticky w-[300px] bg-black/10 rounded  h-screen flex text-white justify-right px-4 py-4">
         <ul className="w-full">
           <div className="my-4 bg-white/10 p-4 rounded flex justify-between items-center">
-            <span> ایمیل شما : </span>
+            <span className="text-sm"> ایمیل شما : </span>
             <span className="text-[14px]">{emailUser}</span>
           </div>
           <li className="my-4 hover:bg-white/10 p-3 cursor-pointer rounded">

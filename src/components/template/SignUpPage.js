@@ -7,6 +7,7 @@ import toast, {Toaster} from "react-hot-toast";
 import {ThreeDots} from "react-loader-spinner";
 function SignUpPage() {
   const [username, setuserName] = useState("");
+  const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -18,12 +19,16 @@ function SignUpPage() {
     setLoading(true);
     const res = await fetch("/api/auth/signup", {
       method: "POST",
-      body: JSON.stringify({username, email, password}),
+      body: JSON.stringify({nickname, username, email, password}),
       headers: {"content-Type": "application/json"},
     });
     const data = await res.json();
     setLoading(false);
     console.log(data);
+    if (!nickname) {
+      toast.error("نام و نام خانوادگی خود را وارد کنید");
+      return;
+    }
     if (!username) {
       toast.error("نام کاربری خود را وارد کنید");
       return;
@@ -59,6 +64,22 @@ function SignUpPage() {
           <span className="text-primary"> دونایت</span> | برنامه نویس شب
         </h2>
         <span>برنامه نویسی تو شب قشنگـ ـتره</span>
+        <div className="my-4 w-full relative">
+          <label
+            htmlFor="nickname"
+            className="absolute right-2 px-2 -top-4 bg-[#3F3F3F] ">
+            نام و نام خانوادگی{" "}
+          </label>
+          <input
+            className="w-full p-3 outline-none focus-visible::bg-primary bg-transparent border border-white/20 rounded"
+            type="text"
+            placeholder="علی محمدی"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value)}
+            name="nickname"
+            id="nickname"
+          />
+        </div>
         <div className="my-4 w-full relative">
           <label
             htmlFor="username"
