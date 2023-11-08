@@ -1,4 +1,3 @@
-import {yekanBakh} from "@/utils/fonts";
 import Footer from "./Footer";
 import Header from "./Header";
 
