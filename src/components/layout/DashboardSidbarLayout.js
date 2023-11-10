@@ -29,6 +29,9 @@ function DashboardSidbarLayout({children, session}) {
             <Link href="/dashboard/license">لایسنس ها</Link>
           </li>
           <li className="my-4 hover:bg-white/10 p-3 cursor-pointer rounded">
+            <Link href="/dashboard/add">ثبت دوره جدید</Link>
+          </li>
+          <li className="my-4 hover:bg-white/10 p-3 cursor-pointer rounded">
             <button onClick={signOutHandler}>خروج از حساب کاربری</button>
           </li>
         </ul>

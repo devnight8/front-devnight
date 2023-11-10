@@ -11,9 +11,9 @@ async function DashBoard() {
   console.log(user);
   return (
     <DashboardPage
-      createdAt={user.createdAt}
-      email={user.email}
-      nickname={user.nickname}
+      createdAt={user?.createdAt}
+      email={user?.email}
+      nickname={user?.nickname}
     />
   );
 }

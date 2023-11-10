@@ -8,13 +8,14 @@ export async function POST(req) {
     await connectDB();
     const body = await req.json();
     const {username, email, password, nickname} = body;
-    console.log(username, email, password);
+    console.log(username, email, password, nickname);
     if (!username || !email || !password || !nickname) {
       return NextResponse.json(
         {error: "لطفا اطلاعات معتبر وراد کنید"},
         {status: 422}
       );
     }
+
     const existingUser = await User.findOne({email: email});
     console.log(existingUser);
     if (existingUser) {

@@ -38,6 +38,11 @@ function SignUpPage() {
       return;
     }
 
+    if (!email.includes("@")) {
+      toast.error("ایمیل معتبر وارد کنید");
+      return;
+    }
+
     if (!password) {
       toast.error("رمز عبور خود را وارد کنید");
       return;
