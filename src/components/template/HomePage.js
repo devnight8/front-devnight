@@ -9,6 +9,10 @@ function HomePage() {
       <Intro />
       <TitleSections title="جدیدترین دوره ها" titleEn="Latest courses" />
       <LatestCourses />
+      <TitleSections title="دوره های فرانت اند" titleEn="front end" />
+      <LatestCourses />
+      <TitleSections title="دوره های بک اند" titleEn="back end" />
+      <LatestCourses />
     </>
   );
 }

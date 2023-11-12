@@ -1,14 +1,18 @@
 "use client";
 import {signOut} from "next-auth/react";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 import toast, {Toaster} from "react-hot-toast";
 
 function DashboardSidbarLayout({children, session}) {
   const emailUser = session?.user.email;
+  const router = useRouter();
+
   const signOutHandler = () => {
     toast.success("با موفقیت خارج شدید");
     setInterval(() => {
       signOut();
+      router.push("/");
     }, 1500);
   };
   return (

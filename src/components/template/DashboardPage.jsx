@@ -1,7 +1,6 @@
 
 
 function DashboardPage({createdAt,nickname}) {
-console.log(nickname)
   return (
     <div className="container flex ">
       <div className="flex items-center justify-center text-right flex-col w-full">

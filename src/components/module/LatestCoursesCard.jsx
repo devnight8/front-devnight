@@ -12,7 +12,7 @@ function LatestCoursesCard() {
 
   return (
     <section className="bg-gradient-to-l from-[#373737] to-[#2c384900] px-4 my-24 relative">
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4 justify-evenly md:gap-2 relative -top-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-4 justify-evenly md:gap-2 relative -top-10">
         <div className="bg-gradient-to-t from-[#000] group to-[#2C3849] rounded-md p-4 relative flex items-center justify-center flex-col">
           <button
             className="self-end p-1 bg-white/10 rounded-full text-3xl "
@@ -25,7 +25,7 @@ function LatestCoursesCard() {
               }
             />
           </button>
-          <div className="relative mb-5 mt-10">
+          <div className="relative mb-5 mt-10 w-full">
             <Image
               className="w-full h-auto rounded-md "
               src={product01}
@@ -67,7 +67,7 @@ function LatestCoursesCard() {
               }
             />
           </button>
-          <div className="relative mb-5 mt-10">
+          <div className="relative mb-5 mt-10 w-full">
             <Image
               className="w-full h-auto rounded-md "
               src={product01}
@@ -109,7 +109,7 @@ function LatestCoursesCard() {
               }
             />
           </button>
-          <div className="relative mb-5 mt-10">
+          <div className="relative mb-5 mt-10 w-full">
             <Image
               className="w-full h-auto rounded-md "
               src={product01}
@@ -151,7 +151,7 @@ function LatestCoursesCard() {
               }
             />
           </button>
-          <div className="relative mb-5 mt-10">
+          <div className="relative mb-5 mt-10 w-full">
             <Image
               className="w-full h-auto rounded-md "
               src={product01}
