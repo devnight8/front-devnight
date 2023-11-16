@@ -1,0 +1,72 @@
+"use client";
+
+import {useState} from "react";
+import product01 from "@/public/images/product01.png";
+import Image from "next/image";
+import {HiHeart} from "react-icons/hi2";
+import {BiBasket} from "react-icons/bi";
+
+function Card({name, catagory, price, iamge, createdAt}) {
+  const [liked, setLiked] = useState(false);
+
+  const likeHandler = () => {
+    setLiked((liked) => !liked);
+  };
+  return (
+    <>
+      <div className="bg-gradient-to-t from-[#000] group to-[#2C3849] rounded-md p-4 relative flex items-center justify-center flex-col">
+        <div className="self-end flex gap-x-2">
+          <button className="self-end p-1 bg-white/5 rounded-full text-3xl ">
+            <BiBasket className="relative text-[26px]  -top-[1px] text-white/20 hover:scale-105 transition-all" />
+          </button>
+          <button
+            className="self-end p-1 bg-white/5 rounded-full text-3xl "
+            onClick={likeHandler}>
+            <HiHeart
+              className={
+                liked
+                  ? "relative text-[26px] top-[1px] text-red-500 hover:scale-105 transition-all"
+                  : "relative text-[26px]  top-[1px] text-white/20 hover:scale-105 transition-all"
+              }
+            />
+          </button>
+        </div>
+        <div className="relative mb-5 mt-10 w-full">
+          <Image
+            className="w-full h-auto rounded-md "
+            src={product01}
+            alt="product"
+            width={1000}
+            height={1000}
+          />
+          <div className="flex items-start flex-col bottom-2 right-2 justify-start absolute w-fit ">
+            <span className="my-2 bg-gradient-to-l from-[#450497] to-[#320072] px-2 py-1 text-white text-sm rounded-md">
+              {catagory}
+            </span>
+            <h3 className="text-white font-bold inline-block w-fit ">{name}</h3>
+          </div>
+        </div>
+
+        <div className="flex items-center justify-start w-full text-right">
+          <span className="text-white/25 font-light"> هزینه دوره: </span>
+          <span className="text-white mx-1"> {price} تومان </span>
+        </div>
+        <div className="flex items-center justify-start mb-9 w-full text-right">
+          <span className="text-white/25 font-light">تاریخ انتشار:</span>
+          <span className="text-white mx-1">
+            {new Date(createdAt).toLocaleDateString("fa-IR", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
+        </div>
+        <button className="bg-gradient-to-l from-[#0A3B8A] to-[#040C18]  py-2 text-white relative self-center top-6 px-4 rounded-md group-hover:-translate-y-1 transition-all ease duration-700">
+          مشاهده دوره
+        </button>
+      </div>
+    </>
+  );
+}
+
+export default Card;
