@@ -10,7 +10,7 @@ import {useSession} from "next-auth/react";
 import Link from "next/link";
 
 function Header() {
-  const {data} = useSession();
+const {data} = useSession();
 
   return (
     <header className="flex items-center mx-2 md:mx-0 justify-between py-5 border-b border-b-white/5 ">
@@ -36,7 +36,9 @@ function Header() {
           <div className="flex items-center gap-x-4">
             <Link href="/cart" className="relative">
               <BiBasket className="text-white text-2xl " />
-              <span className="absolute bg-red-500 text-white rounded-full p-[4px] flex items-center justify-center -top-2 right-0 w-4 h-4 text-[12px]">2</span>
+              <span className="absolute bg-red-500 text-white rounded-full p-[4px] flex items-center justify-center -top-2 right-0 w-4 h-4 text-[12px]">
+                0
+              </span>
             </Link>
             <Link
               href="/dashboard"

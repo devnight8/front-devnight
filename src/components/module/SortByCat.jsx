@@ -1,21 +1,21 @@
-const data = [
-  {
-    id: 1,
-    title: "فرانت اند",
-  },
-  {
-    id: 2,
-    title: "بک اند",
-  },
-];
-function SortByCat() {
+"use client"
+import { useState } from "react";
+
+
+function SortByCat({data}) {
+  const pro = data
+  const [filterd,setFilterd] = useState([])
+  const filterHandler = (category)=>{
+    const filterPro = pro.filter(item =>{
+      console.log(item)
+    })
+  }
   return (
     <div className="mt-3">
       {data.map((item) => (
-       <div className="flex items-center justify-start  gap-x-2">
-        
-        <input type="checkbox" value={item.title} id={item.id} />
-        <label htmlFor={item.id}>{item.title}</label>
+       <div id={item.category.id} className="flex items-center justify-start  gap-x-2">
+        <input type="checkbox" value={item.category.name} id={item.category.id} onChange={filterHandler} />
+        <label htmlFor={item.category.id}>{item.category.name}</label>
        </div>
       ))}
     </div>

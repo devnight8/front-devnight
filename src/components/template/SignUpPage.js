@@ -61,6 +61,7 @@ function SignUpPage() {
   return (
     <form
       method="post"
+      autocomplete="off"
       className="flex items-center flex-col justify-center min-h-screen group-hover">
       <section
         id="form-signup"
@@ -83,6 +84,7 @@ function SignUpPage() {
             onChange={(e) => setNickname(e.target.value)}
             name="nickname"
             id="nickname"
+            autocomplate="false"
           />
         </div>
         <div className="my-4 w-full relative">
@@ -99,6 +101,7 @@ function SignUpPage() {
             onChange={(e) => setuserName(e.target.value)}
             name="userName"
             id="username"
+            autocomplate="false"
           />
         </div>
         <div className="my-4 w-full relative ">
@@ -115,6 +118,7 @@ function SignUpPage() {
             onChange={(e) => setEmail(e.target.value)}
             name="email"
             id="email"
+            autocomplate="false"
           />
         </div>
         <div className="my-4 w-full relative">
@@ -131,6 +135,7 @@ function SignUpPage() {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             id="password"
+            autocomplate="false"
           />
         </div>
         {loading ? (

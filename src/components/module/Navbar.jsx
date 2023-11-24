@@ -13,7 +13,7 @@ function Navbar() {
             <Link href="/">صفحه اصلی</Link>
           </li>
           <li className="text-white/25 hover:text-white xl:text-md">
-            <Link href="/courses">دروه ها</Link>
+            <Link href="/courses">دوره ها</Link>
           </li>
           <li className="text-white/25 hover:text-white xl:text-md">
             <Link href="/">مقالات</Link>

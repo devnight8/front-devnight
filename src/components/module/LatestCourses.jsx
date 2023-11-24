@@ -2,10 +2,10 @@ import React from 'react'
 import LatestCoursesCard from './LatestCoursesCard'
 
 
-function LatestCourses({data}) {
+function LatestCourses() {
   return (
     <>
-    <LatestCoursesCard data={data}/>
+    <LatestCoursesCard />
     </>
   )
 }

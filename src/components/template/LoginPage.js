@@ -37,6 +37,7 @@ function LoginPage() {
   return (
     <form
       method="post"
+      autocomplete="off"
       className="flex items-center flex-col justify-center min-h-screen group-hover">
       <section
         id="form-signup"
@@ -59,6 +60,7 @@ function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
             name="email"
             id="email"
+            autocomplate="false"
           />
         </div>
         <div className="my-4 w-full relative">
@@ -75,6 +77,7 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             id="password"
+            autocomplate="false"
           />
         </div>
         {loading ? (
