@@ -1,22 +1,21 @@
-"use client"
-import { useState } from "react";
+"use client";
 
+import {useContext} from "react";
+import {ProductContext} from "src/context/ProductContextProvider";
 
-function SortByCat({data}) {
-  const pro = data
-  const [filterd,setFilterd] = useState([])
-  const filterHandler = (category)=>{
-    const filterPro = pro.filter(item =>{
-      console.log(item)
-    })
-  }
+function SortByCat() {
+  const products = useContext(ProductContext);
   return (
     <div className="mt-3">
-      {data.map((item) => (
-       <div id={item.category.id} className="flex items-center justify-start  gap-x-2">
-        <input type="checkbox" value={item.category.name} id={item.category.id} onChange={filterHandler} />
-        <label htmlFor={item.category.id}>{item.category.name}</label>
-       </div>
+      {products.map((item, index) => (
+        <div key={index} className="flex items-center justify-start  gap-x-2">
+          <input
+            type="checkbox"
+            value={item.category.name}
+            id={item.category.id}
+          />
+          <label htmlFor={item.category.id}>{item.category.name}</label>
+        </div>
       ))}
     </div>
   );

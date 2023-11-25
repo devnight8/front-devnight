@@ -4,8 +4,9 @@ import {useState} from "react";
 import Image from "next/image";
 import {HiHeart} from "react-icons/hi2";
 import {BiBasket} from "react-icons/bi";
+import Link from "next/link";
 
-function Card({name, catagory, price, iamge, createdAt}) {
+function Card({id, name, catagory, slug, price, iamge, createdAt}) {
   const [liked, setLiked] = useState(false);
 
   const likeHandler = () => {
@@ -42,7 +43,9 @@ function Card({name, catagory, price, iamge, createdAt}) {
             <span className="my-2 bg-gradient-to-l from-[#450497] to-[#320072] px-2 py-1 text-white text-sm rounded-md cursor-pointer">
               {catagory}
             </span>
-            <h3 className="text-white font-bold inline-block w-fit cursor-pointer">{name}</h3>
+            <h3 className="text-white font-bold inline-block w-fit cursor-pointer">
+              {name}
+            </h3>
           </div>
         </div>
 
@@ -60,9 +63,11 @@ function Card({name, catagory, price, iamge, createdAt}) {
             })}
           </span>
         </div>
-        <button className="bg-gradient-to-l from-[#0A3B8A] to-[#040C18]  py-2 text-white relative self-center top-6 px-4 rounded-md hover:-translate-y-1 transition-all ease duration-700">
+        <Link
+          href={`courses/${slug}`}
+          className="bg-gradient-to-l from-[#0A3B8A] to-[#040C18]  py-2 text-white relative self-center top-6 px-4 rounded-md hover:-translate-y-1 transition-all ease duration-700">
           مشاهده دوره
-        </button>
+        </Link>
       </div>
     </>
   );
