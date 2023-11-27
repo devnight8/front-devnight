@@ -13,11 +13,11 @@ function CoursesPage() {
   return (
     <>
       <section className="bg-gradient-to-l gap-x-4 my-24 relative flex">
-        <div className="hidden md:flex flex-col w-1/4 bg-black/10 p-4 rounded-md text-white ">
+        <div className="hidden md:flex flex-col w-1/4 bg-black/10 p-4  min-h-screen rounded-md text-white ">
           <span>دسته بندی بر اساس</span>
           <SortByCat  />
         </div>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-3 md:gap-6  md:w-3/4 justify-evenly">
+        <div className="w-full grid grid-cols-1 bg-black/10 p-4 min-h-screen sm:grid-cols-2 gap-6 lg:grid-cols-3 md:gap-6  md:w-3/4 justify-evenly">
           {productSlice?.map((item) => (
             <Card
               key={item.id}
