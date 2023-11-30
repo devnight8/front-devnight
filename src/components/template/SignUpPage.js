@@ -24,7 +24,6 @@ function SignUpPage() {
     });
     const data = await res.json();
     setLoading(false);
-    console.log(data);
     if (!nickname) {
       toast.error("نام و نام خانوادگی خود را وارد کنید");
       return;

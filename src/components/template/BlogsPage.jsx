@@ -6,7 +6,6 @@ import CardBlog from "../module/CardBlog";
 
 function BlogsPage() {
   const blogs = useContext(BlogContext);
-  console.log(blogs);
 
   const blogSlice = blogs?.slice(0, 12);
   return (

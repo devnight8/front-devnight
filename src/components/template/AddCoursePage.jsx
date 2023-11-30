@@ -17,7 +17,6 @@ function AddCoursePage() {
   });
 
   const submitHandler = () => {
-    console.log(courseData);
     setCourseData({
         title: "",
         desc: "",

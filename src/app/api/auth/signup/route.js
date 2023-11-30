@@ -8,7 +8,6 @@ export async function POST(req) {
     await connectDB();
     const body = await req.json();
     const {username, email, password, nickname} = body;
-    console.log(username, email, password, nickname);
     if (!username || !email || !password || !nickname) {
       return NextResponse.json(
         {error: "لطفا اطلاعات معتبر وراد کنید"},
@@ -17,7 +16,6 @@ export async function POST(req) {
     }
 
     const existingUser = await User.findOne({email: email});
-    console.log(existingUser);
     if (existingUser) {
       return NextResponse.json({
         error: "شما قبلا با این ایمیل ثبت نام کرده اید",
@@ -31,7 +29,6 @@ export async function POST(req) {
       email: email,
       password: hashedPassword,
     });
-    console.log(newUser);
     return NextResponse.json(
       {message: "ثبت نام با موفقیت انجام شد "},
       {
@@ -39,7 +36,6 @@ export async function POST(req) {
       }
     );
   } catch (err) {
-    console.log("faild to connect db");
     return NextResponse.json(
       {error: "مشکلی در سرور رخ داده است "},
       {status: 500}
