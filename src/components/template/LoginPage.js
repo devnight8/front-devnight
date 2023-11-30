@@ -41,11 +41,11 @@ function LoginPage() {
       className="flex items-center flex-col justify-center min-h-screen group-hover">
       <section
         id="form-signup"
-        className="bg-[#3F3F3F] w-[500px] flex flex-col items-center  px-4 py-5 rounded text-center text-white">
+        className="bg-[#3F3F3F] md:w-[500px] mx-4 md:mx-0 flex flex-col items-center px-4 py-5 rounded text-center text-white">
         <h2 className="text-4xl font-bold mb-5">
           <span className="text-primary"> دونایت</span> | برنامه نویس شب
         </h2>
-        <span>برنامه نویسی تو شب قشنگـ ـتره</span>
+        <span className="mb-8">برنامه نویسی تو شب قشنگـ ـتره</span>
         <div className="my-4 w-full relative ">
           <label
             htmlFor="email"
