@@ -14,7 +14,6 @@ function CoursDetail({params: {coursDetail}}) {
         );
         const data = await res?.json();
         const {name, price, description, image, view} = data;
-        console.log(name);
         setProduct(data);
       } catch (error) {
         toast.error("مشکلی در سرور به وجود آمده است");

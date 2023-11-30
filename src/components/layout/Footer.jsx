@@ -1,8 +1,8 @@
 import React from "react";
 import logoFoter from "@/public/images/Devnigh-logo.webp";
-import {AiOutlineWhatsApp} from "react-icons/Ai";
-import {PiTelegramLogoThin} from "react-icons/Pi";
-import {PiInstagramLogoLight} from "react-icons/Pi";
+import {AiOutlineWhatsApp} from "react-icons/ai";
+import {PiTelegramLogoThin} from "react-icons/pi";
+import {PiInstagramLogoLight} from "react-icons/pi";
 import Image from "next/image";
 import Link from "next/link";
 
