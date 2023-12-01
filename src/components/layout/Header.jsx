@@ -8,15 +8,21 @@ import {BiBasket} from "react-icons/bi";
 
 import {useSession} from "next-auth/react";
 import Link from "next/link";
+import NavbarMobile from "../module/NavbarMobile";
+import {useState} from "react";
 
 function Header() {
-const {data} = useSession();
-
+  const {data} = useSession();
+  const [showMeno, setShowMenu] = useState(false);
   return (
     <header className="flex items-center mx-2 md:mx-0 justify-between py-5 border-b border-b-white/5 ">
       <div className="md:hidden">
-        <HiOutlineBars3BottomRight className="text-white text-2xl" />
+        <HiOutlineBars3BottomRight
+          className="text-white text-2xl"
+          onClick={()=>setShowMenu(!showMeno)}
+        />
       </div>
+      {!showMeno ? null : <NavbarMobile showMeno={showMeno} setShowMenu={setShowMenu} />}
       <div>
         <Link href="/">
           <Image
