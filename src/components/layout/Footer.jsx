@@ -11,7 +11,7 @@ function Footer() {
     <footer
       id="footer"
       className=" bg-[#2B2B2B] ">
-      <section className="container m-auto grid grid-cols-1 md:grid-cols-4 justify-items-center  py-20 border-t border-white/10 ">
+      <section className="container gap-y-8 md:gap-y-0 px-4 md:px-0 m-auto grid grid-cols-1 md:grid-cols-4 md:justify-items-center  py-20 border-t border-white/10 ">
         <div>
           <Image
             className="w-[130px] max-w-full h-auto mb-3 "
