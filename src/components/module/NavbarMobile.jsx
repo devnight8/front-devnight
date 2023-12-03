@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import React, {useState} from "react";
 import {IoClose} from "react-icons/io5";
 
 function NavbarMobile({setShowMenu,showMeno}) {
@@ -8,7 +7,7 @@ const closeHander = ()=>{
     setShowMenu(!showMeno);
 }
   return (
-    <div className="w-[75%] absolute bg-black right-0 top-0 bottom-0 z-40">
+    <div className="w-[75%] absolute bg-black right-0 top-0  bottom-0 z-40">
       <nav className="flex relative">
         <ul className="flex flex-col [&>li]:my-3 [&>li]:mx-3 mt-5 p-2">
           <li className="text-white/25 hover:text-white xl:text-md">

@@ -8,7 +8,6 @@ import Link from "next/link";
 
 function Card({id, name, catagory, slug, price, iamge, createdAt}) {
   const [liked, setLiked] = useState(false);
-
   const likeHandler = () => {
     setLiked((liked) => !liked);
   };
