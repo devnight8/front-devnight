@@ -67,8 +67,11 @@ function CoursDetail({params: {coursDetail}}) {
         </div>
       </div>
       <div className="bg-black/10 w-full p-3 rounded min-h-screen">
-        <h3 className="mb-6 text-xl">درباره محصول {product.name}</h3>
-        <p className="leading-8 font-light text-white/50">
+        <h3 className="mb-6 text-xl mt-2">درباره محصول {product.name}</h3>
+        <p className="leading-8 font-light text-white/50 text-justify">
+          {product.description}
+          {product.description}
+          {product.description}
           {product.description}
         </p>
       </div>
