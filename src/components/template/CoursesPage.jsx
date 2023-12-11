@@ -10,15 +10,17 @@ function CoursesPage() {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState({});
 
-  useEffect(() => {
-    setDisplated(products);
-  }, [products]);
-
+  
   useEffect(() => {
     if (!query) return products;
     const filterdProducts = products.filter((p) => p.category.name === query);
     return setDisplated(filterdProducts);
   }, [query]);
+
+
+  useEffect(() => {
+    setDisplated(products);
+  }, [products]);
 
 
   return (
