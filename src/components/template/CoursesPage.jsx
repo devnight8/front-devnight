@@ -16,7 +16,7 @@ function CoursesPage() {
 
   useEffect(() => {
     if (!query) return products;
-    const filterdProducts = displayed.filter((p) => p.category.name === query);
+    const filterdProducts = products.filter((p) => p.category.name === query);
     return setDisplated(filterdProducts);
   }, [query]);
 
