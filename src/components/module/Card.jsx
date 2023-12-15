@@ -34,7 +34,7 @@ function Card({id, name, catagory, slug, price, iamge, createdAt}) {
           <Image
             className="w-full  rounded-md h-[200px] object-cover relative overflow-hidden "
             src={iamge}
-            alt="product"
+            alt={name}
             width={1000}
             height={1000}
           />

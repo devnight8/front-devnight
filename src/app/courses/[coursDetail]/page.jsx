@@ -52,7 +52,7 @@ function CoursDetail({params: {coursDetail}}) {
                 src={product.image}
                 width={1000}
                 height={1000}
-                alt={product.name}
+                alt={coursDetail}
               />
             </div>
           )}

@@ -4,6 +4,8 @@ import Image from "next/image";
 import logo from "@/public/images/DEVNIGHT.svg";
 import Navbar from "../module/Navbar";
 import {HiOutlineBars3BottomRight} from "react-icons/hi2";
+import {FaRegUser} from "react-icons/fa";
+
 import {BiBasket, BiSearch} from "react-icons/bi";
 
 import {useSession} from "next-auth/react";
@@ -11,6 +13,7 @@ import Link from "next/link";
 import NavbarMobile from "../module/NavbarMobile";
 import {useState} from "react";
 import SearchBar from "../module/SearchBar";
+import {PiSignature} from "react-icons/pi";
 
 function Header() {
   const {data} = useSession();
@@ -47,13 +50,14 @@ function Header() {
       <div>
         {data ? (
           <div className="flex items-center gap-x-4">
-             <BiSearch className="text-white text-2xl cursor-pointer" onClick={showSearchBarHandler} />
-             {!showSearchBar ? null : (
-              <SearchBar   />
-            )}
+            <BiSearch
+              className="text-white text-2xl cursor-pointer"
+              onClick={showSearchBarHandler}
+            />
+            {!showSearchBar ? null : <SearchBar />}
             <Link href="/cart" className="relative">
               <BiBasket className="text-white text-2xl " />
-              <span className="absolute bg-red-500 text-white rounded-full p-[4px] flex items-center justify-center -top-2 right-0 w-4 h-4 text-[12px]">
+              <span className="absolute bg-blue-500 text-white rounded-full p-[4px] flex items-center justify-center -top-2 right-0 w-4 h-4 text-[12px]">
                 0
               </span>
             </Link>
@@ -64,16 +68,26 @@ function Header() {
             </Link>
           </div>
         ) : (
-          <div className="  flex items-center justify-between flex-row-reverse space-x-4">
+          <div className="flex items-center justify-between flex-row-reverse space-x-4">
             <Link
               href="/signup"
-              className="bg-black py-2 px-4 text-[14px] md:py-3 md:px-5 rounded-md md:text-md text-white hover:bg-primary transition-all">
+              className="hidden md:flex bg-black py-2 px-4 text-[14px] md:py-3 md:px-5 rounded-md md:text-md text-white hover:bg-primary transition-all">
               ثبت نام و ورود
             </Link>
-            <BiSearch className="text-white text-2xl cursor-pointer" onClick={showSearchBarHandler} />
-            {!showSearchBar ? null : (
-              <SearchBar   />
-            )}
+            <Link href="/signup" className="text-white text-xl cursor-pointer">
+              <FaRegUser />
+            </Link>
+            <Link href="/cart" className="relative">
+              <BiBasket className="text-white text-2xl " />
+              <span className="absolute bg-blue-500 text-white rounded-full p-[4px] flex items-center justify-center -top-2 right-0 w-4 h-4 text-[12px]">
+                0
+              </span>
+            </Link>
+            <BiSearch
+              className="text-white text-2xl cursor-pointer"
+              onClick={showSearchBarHandler}
+            />
+            {!showSearchBar ? null : <SearchBar />}
           </div>
         )}
       </div>
