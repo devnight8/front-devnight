@@ -1,8 +1,10 @@
 "use client";
 
+import BreadCrumb from "@/components/module/BreadCrumb";
 import Image from "next/image";
 import Link from "next/link";
 import {useEffect, useState} from "react";
+import {HiChevronLeft} from "react-icons/hi2";
 import {ThreeDots, Triangle} from "react-loader-spinner";
 
 function CoursDetail({params: {coursDetail}}) {
@@ -27,7 +29,9 @@ function CoursDetail({params: {coursDetail}}) {
   }, []);
   return (
     <div className="flex flex-col items-center w-full text-white my-10 space-y-4 px-2 md:px-0">
-      <div className="bg-black/10 w-full p-3 rounded">{product.name}</div>
+      <div className="bg-black/10 w-full p-3 rounded flex gap-x-4 items-center">
+        <BreadCrumb /> <HiChevronLeft /> {product.name}
+      </div>
       <div className="flex flex-col md:flex-row w-full gap-x-4">
         <div className="bg-black/10 flex-col md:flex-row flex-1 p-3 rounded flex gap-x-4">
           {loading ? (

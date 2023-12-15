@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import {useRouter} from "next/navigation";
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import toast, {Toaster} from "react-hot-toast";
 import {ThreeDots} from "react-loader-spinner";
 function SignUpPage() {
@@ -13,6 +13,10 @@ function SignUpPage() {
   const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+  const inputName = useRef(null);
+  useEffect(() => {
+    inputName.current.focus();
+  }, []);
 
   const clickHandler = async (e) => {
     e.preventDefault();
@@ -36,12 +40,10 @@ function SignUpPage() {
       toast.error("ایمیل خود را وارد کنید");
       return;
     }
-
     if (!email.includes("@")) {
       toast.error("ایمیل معتبر وارد کنید");
       return;
     }
-
     if (!password) {
       toast.error("رمز عبور خود را وارد کنید");
       return;
@@ -60,7 +62,7 @@ function SignUpPage() {
   return (
     <form
       method="post"
-      autocomplete="off"
+      autoComplete="off"
       className="flex items-center flex-col justify-center min-h-screen group-hover">
       <section
         id="form-signup"
@@ -72,8 +74,9 @@ function SignUpPage() {
         <div className="my-4 w-full relative">
           <label
             htmlFor="nickname"
-            className="absolute right-2 px-2 -top-4 bg-[#3F3F3F] ">
-            نام و نام خانوادگی{" "}
+            className="absolute right-2 px-2 -top-4 bg-[#3F3F3F] "
+            ref={inputName}>
+            نام و نام خانوادگی
           </label>
           <input
             className="w-full p-3 outline-none focus-visible::bg-primary bg-transparent border border-white/20 rounded"
@@ -83,7 +86,7 @@ function SignUpPage() {
             onChange={(e) => setNickname(e.target.value)}
             name="nickname"
             id="nickname"
-            autocomplate="false"
+            autoComplete="off"
           />
         </div>
         <div className="my-4 w-full relative">
@@ -100,7 +103,7 @@ function SignUpPage() {
             onChange={(e) => setuserName(e.target.value)}
             name="userName"
             id="username"
-            autocomplate="false"
+            autoComplete="off"
           />
         </div>
         <div className="my-4 w-full relative ">
@@ -117,7 +120,7 @@ function SignUpPage() {
             onChange={(e) => setEmail(e.target.value)}
             name="email"
             id="email"
-            autocomplate="false"
+            autoComplete="off"
           />
         </div>
         <div className="my-4 w-full relative">
@@ -134,7 +137,7 @@ function SignUpPage() {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             id="password"
-            autocomplate="false"
+            autoComplete="off"
           />
         </div>
         {loading ? (

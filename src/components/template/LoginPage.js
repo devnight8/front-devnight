@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useRouter} from "next/navigation";
 
 import {signIn} from "next-auth/react";
@@ -9,6 +9,7 @@ import toast, {Toaster} from "react-hot-toast";
 import {ThreeDots} from "react-loader-spinner";
 
 function LoginPage() {
+  const inputEmail = useRef(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,10 +35,14 @@ function LoginPage() {
     }
   };
 
+  useEffect(() => {
+    inputEmail.current.focus();
+  }, []);
+
   return (
     <form
       method="post"
-      autocomplete="off"
+      autoComplete="off"
       className="flex items-center flex-col justify-center min-h-screen group-hover">
       <section
         id="form-signup"
@@ -60,7 +65,8 @@ function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
             name="email"
             id="email"
-            autocomplate="false"
+            autoComplete="off"
+            ref={inputEmail}
           />
         </div>
         <div className="my-4 w-full relative">
@@ -77,7 +83,7 @@ function LoginPage() {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             id="password"
-            autocomplate="false"
+            autoComplete="off"
           />
         </div>
         {loading ? (

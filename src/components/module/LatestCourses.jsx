@@ -1,13 +1,12 @@
-import React from 'react'
-import LatestCoursesCard from './LatestCoursesCard'
-
+import React from "react";
+import LatestCoursesCard from "./LatestCoursesCard";
 
 function LatestCourses() {
   return (
     <>
-    <LatestCoursesCard />
+      <LatestCoursesCard />
     </>
-  )
+  );
 }
 
-export default LatestCourses
+export default LatestCourses;
